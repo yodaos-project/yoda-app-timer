@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.0)
+project(yodaos-timer CXX)
+set(CMAKE_CXX_STANDARD 11)
+
+# MARK: - timer
+set(APP_ROOT_DIR "/opt/apps/timer")
+set(APP_INSTALL_DIR "${CMAKE_INSTALL_DIR}${APP_ROOT_DIR}")
+
+file(GLOB TIMER_SRC *.js *.json)
+
+install(FILES ${TIMER_SRC}
+  DESTINATION ${APP_INSTALL_DIR}
+  PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)
